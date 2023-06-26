@@ -28,6 +28,7 @@ import FirstLoadScreen from '../Task_Tracker/src/Screens/FirstLoadScreen';
 import Color from './src/Utils/Color';
 import LoginScreen from '../Task_Tracker/src/Screens/LoginScreen';
 import CreateAccount from '../Task_Tracker/src/Screens/CreateAccount';
+import MainTabNavigator from './src/Navigation/MainTabNavigator';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -69,19 +70,20 @@ function App(): JSX.Element {
 
   return (
     <SafeAreaView style={{
-      backgroundColor: Color.secondaryColor,
+      // backgroundColor: Color.secondaryColor,
       flex: 1,
 
     }}>
       <View
         style={{
-          marginHorizontal: 16,
-          marginVertical: 16,
+          // marginHorizontal: 16,
+          // marginVertical: 16,
           flex: 1
         }}>
         {/* <FirstLoadScreen /> */}
         {/* <LoginScreen /> */}
-        <CreateAccount />
+        {/* <CreateAccount /> */}
+        <MainTabNavigator />
 
       </View>
     </SafeAreaView>
