@@ -10,10 +10,6 @@ import CheckboxInActive from 'react-native-vector-icons/Ionicons';
 import CheckboxActive from 'react-native-vector-icons/Ionicons';
 
 
-
-
-
-
 export default function CreateAccount() {
 
     const [text, setText] = useState('');
