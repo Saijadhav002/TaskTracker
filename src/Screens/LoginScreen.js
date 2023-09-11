@@ -7,10 +7,7 @@ import EyeOpen from 'react-native-vector-icons/Ionicons';
 import EyeClose from 'react-native-vector-icons/Ionicons';
 import Google from 'react-native-vector-icons/SimpleLineIcons';
 import { useNavigation } from '@react-navigation/native';
-
-
-
-
+import Global from './Global';
 
 export default function LoginScreen() {
 
@@ -20,7 +17,6 @@ export default function LoginScreen() {
     const [PasswordVisible, setPasswordVisible] = useState(false);
     const [Password, setPassword] = useState('');
 
-
     const handleInputChange = (inputText) => {
         setText(inputText);
     };
@@ -28,6 +24,13 @@ export default function LoginScreen() {
     const handlePasswordChange = (inputText) => {
         setPassword(inputText);
     }
+
+    const handleLoginPress = () => {
+        Global.LoginName = text;
+        Global.Password = Password;
+        navigation.navigate("HomeScreen");
+    }
+
     return (
         <SafeAreaView style={{
             backgroundColor: Color.secondaryColor,
@@ -65,9 +68,9 @@ export default function LoginScreen() {
                         <View style={{ justifyContent: "center", position: "relative", marginTop: 13 }}>
                             <Ionicons
                                 name="person"
-                                size={30}
+                                size={27}
                                 color="white"
-                                style={{ position: 'absolute', top: 4, left: 15 }}
+                                style={{ position: 'absolute', top: 8, left: 10 }}
                             />
                             <TextInput
                                 style={{ borderWidth: 1, borderColor: 'gray', padding: 10, paddingLeft: 49, color: 'white' }}
@@ -89,9 +92,9 @@ export default function LoginScreen() {
                         <View style={{ justifyContent: "center", position: "relative", marginTop: 13 }}>
                             <Ionicons
                                 name="person"
-                                size={30}
+                                size={27}
                                 color="white"
-                                style={{ position: 'absolute', top: 4, left: 15 }}
+                                style={{ position: 'absolute', top: 8, left: 10 }}
                             />
                             <TextInput
                                 style={{ borderWidth: 1, borderColor: 'gray', padding: 10, paddingLeft: 49, color: 'white' }}
@@ -108,15 +111,15 @@ export default function LoginScreen() {
                                 {PasswordVisible ?
                                     <EyeOpen
                                         name="eye"
-                                        size={30}
+                                        size={27}
                                         color="white"
                                         style={{ position: 'absolute', bottom: 5, right: 15 }}
                                     /> :
                                     <EyeClose
                                         name="eye-off"
-                                        size={30}
+                                        size={27}
                                         color="white"
-                                        style={{ position: 'absolute', bottom: 5, right: 15 }}
+                                        style={{ position: 'absolute', bottom: 11, right: 15 }}
                                     />
                                 }
                             </TouchableOpacity>
@@ -132,29 +135,26 @@ export default function LoginScreen() {
                         </TouchableOpacity>
                     </View>
                     <TouchableOpacity
-                        style={{ marginTop: 13, alignItems: "center" }}
+                        onPress={() => handleLoginPress()}
+                        style={{ marginTop: 13, alignItems: "center", backgroundColor: Color.primaryColor, height: 50, width: "50%", justifyContent: "center", borderRadius: 5, marginTop: 15, alignSelf: "center" }}
                     >
-                        <View style={{ backgroundColor: Color.primaryColor, height: 50, width: "50%", justifyContent: "center", alignItems: "center", borderRadius: 5, marginTop: 15 }}>
-                            <Text style={{ color: Color.buttonTextColor, fontSize: 19, fontWeight: 600 }}>Login</Text>
-                        </View>
+                        <Text style={{ color: Color.buttonTextColor, fontSize: 19, fontWeight: 600 }}>Login</Text>
                     </TouchableOpacity>
                     <View style={{ justifyContent: "space-between", flexDirection: "row", marginTop: 25 }}>
                         <Text style={{ color: Color.placeholderTextColor }}>------------------------------- </Text>
                         <Text style={{ color: Color.placeholderTextColor, fontSize: 13, fontWeight: 600 }}> Or Continue with </Text>
                         <Text style={{ color: Color.placeholderTextColor }}> ------------------------------</Text>
                     </View>
-                    <TouchableOpacity
-                        style={{ marginTop: 13, alignItems: "center" }}
+                    {/* <TouchableOpacity
+                        style={{ alignItems: "center", backgroundColor: Color.secondaryColor, height: 50, width: "50%", justifyContent: "center", borderRadius: 5, marginTop: 15, borderWidth: 2, borderColor: "white", flexDirection: "row", alignSelf: "center" }}
                     >
-                        <View style={{ backgroundColor: Color.secondaryColor, height: 50, width: "50%", justifyContent: "center", alignItems: "center", borderRadius: 5, marginTop: 15, borderWidth: 2, borderColor: "white", flexDirection: "row" }}>
-                            <Google
-                                name="social-google"
-                                size={30}
-                                color="white"
-                            />
-                            <Text style={{ color: "white", fontSize: 19, fontWeight: 600, marginLeft: 15 }}>Google</Text>
-                        </View>
-                    </TouchableOpacity>
+                        <Google
+                            name="social-google"
+                            size={30}
+                            color="white"
+                        />
+                        <Text style={{ color: "white", fontSize: 19, fontWeight: 600, marginLeft: 15 }}>Google</Text>
+                    </TouchableOpacity> */}
                     <View style={{ justifyContent: "center", alignItems: "center", justifyContent: "center", marginTop: 20, flexDirection: "row" }}>
                         <Text style={{ fontSize: 16, color: "white", }}>
                             Don’t have an account?

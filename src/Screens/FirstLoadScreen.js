@@ -1,7 +1,8 @@
-import { View, Text, Image, TouchableOpacity,SafeAreaView } from 'react-native';
+import { View, Text, Image, TouchableOpacity, SafeAreaView } from 'react-native';
 import React from 'react';
 import Color from '../Utils/Color';
 import { useNavigation } from '@react-navigation/native';
+
 
 const FirstLoadScreen = () => {
     const navigation = useNavigation();
@@ -10,7 +11,6 @@ const FirstLoadScreen = () => {
         <SafeAreaView style={{
             backgroundColor: Color.secondaryColor,
             flex: 1,
-
         }}>
             <View
                 style={{

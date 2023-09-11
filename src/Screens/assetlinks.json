@@ -1,0 +1,14 @@
+[
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "com.task_tracker",
+            "sha256_cert_fingerprints": [
+                "EA:C4:59:7F:33:0F:8F:C6:5B:EE:8D:BE:20:1A:40:1F:B0:61:FD:B9:25:4A:14:14:12:EA:4F:BD:98:6D:0C:7F"
+            ]
+        }
+    }
+]
